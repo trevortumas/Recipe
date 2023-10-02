@@ -135,8 +135,31 @@ nav img {
     max-height: 0;
     overflow: hidden;
 }
-  input:checked ~ ul {
+input:checked ~ ul {
     max-height: 500px;
+}
+#menunav li:first-child {
+    font-weight: bold;
+    position: absolute;
+    left: 50px;
+    top: 5px
+}
+#menunav li:last-child{
+    position: absolute;
+    right: 40px;
+    top: 5px
+}
+#logo {
+    position: absolute;
+    left: 150px;
+    top: 5px;
+    background-color: #EB5428;
+    width: 100px;
+}
+#searchbar {
+    position: absolute;
+    top: 100px;
+    left: 30%;
 }
 /* End of Main Naviagtion */
 /* Header */
@@ -231,20 +254,12 @@ header h1 {
 }
 /* footer & socials */
 #connect li{
-    display: inline;
+    display: flex;
+    flex-direction: row;
     color: #EB5428;
 }
 #connect h3{
     visibility: hidden;
-}
-#connect li{
-    display: inline;
-}
-#connect {
-    display: flex;
-    flex-direction: row;
-    columns: 4;
-    align-items: center;
 }
 footer {
     text-align: center;
