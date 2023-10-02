@@ -27,6 +27,9 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
+ol, ul { 
+    list-style: none;
+}
 blockquote, q {
     quotes: none;
 }
@@ -39,7 +42,31 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/* New Code */
+/* Start Code from Splack*/
+html {
+    background-color: rgba(122, 191, 191, .5);
+}
+body {
+    background-color: #F2F2F2;
+    max-width: 414px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "details"
+    "ingredients"
+    "directions"
+    "aside"
+    "footer";
+}
+header {
+    grid-area: header;
+    padding-top: 180px;
+}
+header img {
+    width: 100%;
+}
+/* Font Styles */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
 
@@ -70,6 +97,7 @@ p, dd, li, nav, input, dt {
 dt { 
     font-weight: bold;
 }
+/* End of Font Styles */
 /* Background */
 main {
     background-color: #f2f2f2;
@@ -82,30 +110,153 @@ body {
 #sides {
     background-color: #7abfbf ;
 }
-/* Tacos Nav Bar */
-#tacosnav li{
-    display: inline;
+/* End of Background Colors */
+/* Main Naviagtion design */
+.menu h3 {
+    visibility: hidden;
 }
+nav img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+.menu {
+    position: absolute;
+    top: 0px;
+    background-color: #f2f2f2;
+    width: 414px;
+}
+.menu a {
+    color:#EB5428;
+}
+.menu ul {
+    max-height: 0;
+    overflow: hidden;
+}
+  input:checked ~ ul {
+    max-height: 500px;
+}
+/* End of Main Naviagtion */
+/* Header */
 #tacos img {
     max-width: 100%;
 }
-
-#connect li{
-    display: inline;
-    color: #EB5428;
-}
-footer {
-    text-align: center;
-    background-color: #f2f2f2;
-}
-footer img {
-    max-width: 100%;
-}
-
-ul, ol {
-    list-style: inside;
+header {
+    background-color: #F2F2F2;
 }
 header li {
     list-style: none;
     display: inline;
 }
+header a{
+    color: #EB5428;
+}
+menu { 
+    display: flex;
+    flex-direction: row;
+    columns: 4;
+    align-items: center;
+}
+header h1 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* End of Header */
+/* Details & Tacos Description*/
+#tacos p{
+    margin-bottom: 30px;
+}
+#details h2{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#details dl {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0
+  }
+#details dt {
+    float: left;
+    width: 25%;
+    padding: 0;
+    margin: 0
+}
+#details dd {
+    float: left;
+    width: 75%;
+    padding: 0;
+    margin: 0
+}
+/* End of Details & Tacos Description */
+/* ingredients */
+#ingredients ul {
+    list-style-type: square;
+    list-style-position: inside;
+}
+#ingredients li{
+    margin-bottom: 10px;
+}
+#ingredients h2{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* End of ingredients */
+/* Directions */
+#directions h2{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#directions ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+#directions li{
+    margin-bottom: 10px;
+}
+/* End of Directions */
+/* Dishes */
+#sides h3 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* footer & socials */
+#connect li{
+    display: inline;
+    color: #EB5428;
+}
+#connect h3{
+    visibility: hidden;
+}
+#connect li{
+    display: inline;
+}
+#connect {
+    display: flex;
+    flex-direction: row;
+    columns: 4;
+    align-items: center;
+}
+footer {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+footer p {
+    position: relative;
+    bottom: -300px;
+    font-weight: bold;
+}
+footer img {
+    max-width: 100%;
+    max-height: 50%;
+}
+/* End of Footer & Socials */
