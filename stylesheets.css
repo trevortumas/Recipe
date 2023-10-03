@@ -135,7 +135,7 @@ body {
 }
 /* End of Background Colors */
 /* Main Naviagtion design */
-.menu h3 {
+#menunav h3 {
     visibility: hidden;
 }
 nav img {
@@ -427,4 +427,72 @@ footer img {
     right: 200px;
     top: -100px;
    }
+}
+@media screen and (min-width:1280px) {
+    main, body, nav {
+        width: 1280px;
+    } 
+    #menunav li:last-child {
+        font-weight: bold;
+        position: absolute;
+        right: -700px;
+        top: 5px;
+    } 
+    menu { 
+        position: absolute;
+        top: 220px;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 714px;
+        background-color: #F2F2F2;
+        border: 2px solid #EB5428;
+    }
+    menu li {
+        margin-bottom: 75px;
+    }
+    #searchbar {
+        position: absolute;
+        top: 100px;
+        left: 500px;
+    }
+    header h1 {
+        text-align: center;
+    }
+    #tacos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        line-height: 1.8;
+        column-gap: 5px;
+    }
+    #tacos img {
+        max-width: 75%;
+        max-height: 100%;
+        position: relative;
+        left: 150px;
+    }
+    #details {
+        background-color: #0d0d0d;
+        padding: 15px;
+    }
+    #details h2 {
+        text-align: center;
+        color: #7abfbf;
+        margin-bottom: 15px;
+    }
+    #details dl{
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+    #details dt{
+        color: #7abfbf;
+    }
+    #details dd {
+        color: #7abfbf;
+    }
+    #directions li {
+        width: 850px;
+        line-height: 1.8;
+    }
 }
