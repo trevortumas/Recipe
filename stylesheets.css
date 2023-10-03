@@ -66,6 +66,16 @@ header {
 header img {
     width: 100%;
 }
+.menu ul {
+    max-height: 0;
+    overflow: hidden;
+  }
+input[type=checkbox]:checked ~ ul {
+    max-height: 500px;
+  }
+input[type=checkbox] {
+    display: none;
+  }
 /* Font Styles */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
@@ -110,6 +120,19 @@ body {
 #sides {
     background-color: #7abfbf ;
 }
+#sides .dish {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+#sides img {
+    width: 7rem;
+}
+.dish > div:nth-child(2) {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
 /* End of Background Colors */
 /* Main Naviagtion design */
 .menu h3 {
@@ -138,16 +161,29 @@ nav img {
 input:checked ~ ul {
     max-height: 500px;
 }
+#menunav {
+    display: flex;
+    flex-direction: column;
+    columns: 4;
+    align-items: flex-start;
+}
 #menunav li:first-child {
     font-weight: bold;
     position: absolute;
     left: 50px;
-    top: 5px
+    top: 5px;
+}
+#menunav label {
+    position: absolute;
+    left: 5px;
+    top: 5px; 
+    padding: 3em; 
+    font-weight: bold;
 }
 #menunav li:last-child{
     position: absolute;
     right: 40px;
-    top: 5px
+    top: 5px;
 }
 #logo {
     position: absolute;
@@ -159,7 +195,18 @@ input:checked ~ ul {
 #searchbar {
     position: absolute;
     top: 100px;
-    left: 30%;
+    left: 10%;
+}
+#searchbar {
+    background-color: #EB5428;
+    width: 300px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+#searchbar input {
+    height: 100%;
+    padding-top: 20px;
+    width: 250px;
 }
 /* End of Main Naviagtion */
 /* Header */
@@ -255,8 +302,16 @@ header h1 {
 /* footer & socials */
 #connect li{
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
     color: #EB5428;
+}
+#connect ul {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 #connect h3{
     visibility: hidden;
@@ -266,12 +321,110 @@ footer {
     background-color: #f2f2f2;
 }
 footer p {
-    position: relative;
-    bottom: -300px;
+    /* position: relative;
+    bottom: -300px; */
     font-weight: bold;
+    text-transform: uppercase;
 }
 footer img {
-    max-width: 100%;
-    max-height: 50%;
+    /* max-width: 100%;
+    max-height: 50%; */
+    width: 60%;
+    margin: 2rem 0 2rem 0;
 }
 /* End of Footer & Socials */
+
+/* medium sized window */
+@media screen and (min-width:768px) {
+    main, body, nav {
+        width: 769px;
+    }
+    #menunav li:last-child {
+        font-weight: bold;
+        position: absolute;
+        right: -180px;
+        top: 5px;
+    }
+    #logo {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: #EB5428;
+        width: 100px;
+    } 
+    #menunav ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    #menunav img {
+        width:50px;
+        height: 50px;
+        vertical-align: middle;
+    }
+    #searchbar {
+        position: absolute;
+        top: 10px;
+        left: 330px;
+    }
+    header h1 {
+        text-align: left;
+    }
+    menu {
+        line-height:2em;
+        text-align: center;
+        position:relative;
+        top:80px;
+        background-color: rgba(200, 200, 202, .8);
+    }
+    menu li{
+        margin-right: 125px;
+    }
+    #details {
+        text-align: center;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    #directions li {
+        width: 500px;
+        line-height: 1.8;
+    }
+   #salsa {
+    position: relative;
+    left: 400px;
+    top: -150px;
+   }
+   #guacamole {
+    position: relative;
+    top: -150px;
+   }
+   #tortilla {
+    position: relative;
+    top: -300px;
+    left: 400px;
+   }
+   #sides {
+    height: 350px;
+   }
+   footer img {
+    width: 30%;
+   } 
+   #connect {
+    float: right;
+   }
+   #connect li{
+    margin-right: 20px;
+   }
+   footer div {
+    position: relative;
+    right: 200px;
+    top: -100px;
+   }
+}
