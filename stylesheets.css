@@ -110,7 +110,7 @@ body {
 #sides {
     background-color: #7abfbf ;
 }
-#sides .dish {
+    #sides .dish {
     display: flex;
     flex-direction: row;
     padding: 1rem;
